@@ -311,6 +311,14 @@ production-zone-1:
   templates:
   - template: my-deployment.yaml.j2
 ```
+
+You can use `templates: all` definition to render all templates with extention `j2` in TEMPLATES_DIR recursively:
+```yaml
+cluster-1:
+  ...
+  templates: all
+```
+
 ### Template loader path 
 k8s-handle uses jinja2 template engine and initializes it with base folder specified in the TEMPLATES_DIR env variable.
 Jinja environment considers template paths as specified relatively to its base init directory. 

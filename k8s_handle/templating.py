@@ -108,7 +108,9 @@ class Renderer:
             raise RuntimeError('Can\'t generate templates from None context')
 
         templates = context.get('templates', [])
-        if len(templates) == 0:
+        if templates == 'all':
+            templates = map(lambda x: {'template': x}, self._env.list_templates(extensions=['j2']))
+        elif len(templates) == 0:
             templates = context.get('kubectl', [])
             if len(templates) == 0:
                 return

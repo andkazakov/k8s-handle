@@ -61,6 +61,10 @@ not_existent_template:
   templates:
   - template: doesnotexist.yaml.j2
 
+templates_all:
+  undefined_variable: defined
+  templates: all
+
 section_with_kubectl:
   dirs:
     - dst: /tmp/test_directory1/
